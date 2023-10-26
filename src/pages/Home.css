@@ -1,0 +1,94 @@
+.card{
+    padding: 15px;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.product-container{
+    
+    position: relative;
+    height: 100%;
+   
+   
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+    background-color: rgb(95, 73, 73);
+    padding: 10px;
+}
+
+
+ 
+
+.product-container:hover,
+.product-container.active{
+    transform:translateX(-3px) translateY(-3px);
+    box-shadow: 3px 3px 5px rgb(15, 67, 77);
+
+}
+
+.product-container::before{
+    content: '';
+    width: 0;
+    height: 0;
+    position:absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: aquamarine;
+    border-radius: 50%;
+    transition: all .4s ease-in-out;
+}
+.product-container.active::before,
+.product-container:hover::before{
+    width: 200px;
+    height: 200px;
+
+}
+.product-container::after{
+     content: '';
+    width: 80px;
+    height: 80px;
+    position:absolute;
+    bottom: -90px;
+    left: -90px;
+    /* transform: translate(-50%,-50%); */
+    background-color: aquamarine;
+    border-radius: 50%;
+    transition: all .4s ease-in-out;
+
+}
+
+.product-container.active::after,
+.product-container:hover::after{
+   left: -35px;
+   bottom: -35px;
+}
+.product-container img{
+   
+    object-fit: contain;
+    z-index: 1;
+    transform: translateY(15px);
+    transition: all .4s  ease-in-out;
+}
+.product-container.active img,
+.product-container:hover img{
+    transform: translateY(-10px) scale(.9);
+}
+
+.product-container h3{
+    color: white;
+    font-weight: normal;
+    font-style: 16px;
+    position:relative;
+    transition: 3s linear ease-in-out;
+    top: 0;
+}
+
+.product-container.active h3,
+.product-container:hover h3{
+
+    color: whitesmoke;
+    font-weight: normal;
+    font-style: 16px;
+    top: -25px;
+}
